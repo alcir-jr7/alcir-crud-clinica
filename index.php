@@ -14,7 +14,7 @@ session_start();
     <h1>Sistema Clínico</h1>
     <nav>
         <ul>
-            <li><a href="index.php">Home</a></li>
+            <li><a href="index.php">Home</a>|</li> 
             <?php if (isset($_SESSION['user_id'])): ?>
                 <li>Pacientes: 
                     <a href="/php/create-paciente.php">Adicionar</a> | 
@@ -31,7 +31,7 @@ session_start();
                 <li><a href="/php/logout.php">Logout (<?= htmlspecialchars($_SESSION['username']) ?>)</a></li>
             <?php else: ?>
                 <li><a href="/php/user-login.php">Login</a></li>
-                <li><a href="/php/user-register.php">Registrar</a></li>
+                <li>|<a href="/php/user-register.php">Registrar</a></li>
             <?php endif; ?>
         </ul>
     </nav>
