@@ -23,7 +23,7 @@ $medico = $stmt->fetch(PDO::FETCH_ASSOC);
         <h1>Detalhes do Médico</h1>
         <nav>
             <ul>
-                <li><a href="index.php">Home</a></li>
+                <li><a href="/index.php">Home</a></li>
                 <?php if (isset($_SESSION['user_id'])): ?>
                     <li>Pacientes: 
                         <a href="/php/create-paciente.php">Adicionar</a> | 
