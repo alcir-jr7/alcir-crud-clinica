@@ -31,6 +31,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <header>
         <h1>Adicionar Paciente</h1>
+           <nav>
+            <ul>
+                <li><a href="/index.php">Home</a></li>
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <li>Pacientes: 
+                        <a href="/php/create-paciente.php">Adicionar</a> | 
+                        <a href="/php/index-paciente.php">Listar</a>
+                    </li>
+                    <li>Médicos: 
+                        <a href="/php/create-medico.php">Adicionar</a> | 
+                        <a href="/php/index-medico.php">Listar</a>
+                    </li>
+                    <li>Consultas: 
+                        <a href="/php/create-consulta.php">Adicionar</a> | 
+                        <a href="/php/index-consulta.php">Listar</a>
+                    </li>
+                    <li><a href="/php/logout.php">Logout (<?= $_SESSION['username'] ?>)</a></li>
+                <?php else: ?>
+                    <li><a href="/php/user-login.php">Login</a></li>
+                    <li><a href="/php/user-register.php">Registrar</a></li>
+                <?php endif; ?>
+            </ul>
+        </nav>
     </header>
     <main>
         <form method="POST">
